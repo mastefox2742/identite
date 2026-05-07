@@ -1,11 +1,61 @@
 @import "tailwindcss";
 
 @theme {
-  --color-sienna: #1d4ed8; /* Blue 700 */
-  --color-electric: #3b82f6; /* Blue 500 */
-  --color-deepblack: #0f172a; /* Slate 900 for dark text */
-  --color-sand: #e0f2fe; /* Light blue gradient end */
-  --color-sand-light: #f8fafc; /* Very light slate gradient start */
-  --color-beige: #ffffff; /* White cards and background */
-  --color-slate-gray: #475569; /* Slate 600 for secondary text */
+  --color-sienna: #1d4ed8;
+  --color-electric: #3b82f6;
+  --color-deepblack: #0f172a;
+  --color-sand: #e0f2fe;
+  --color-sand-light: #f8fafc;
+  --color-beige: #ffffff;
+  --color-slate-gray: #475569;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 14mm;
+  }
+
+  /* Hero occupe une page entière */
+  header {
+    page-break-after: always;
+    min-height: 0 !important;
+    height: auto !important;
+    padding-top: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  /* Grille portfolio : 3 colonnes, images avec ratio fixe */
+  #work .grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* Chaque carte est autoportante sur la page */
+  #work .group {
+    aspect-ratio: 3 / 4 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Affichage forcé du label en impression */
+  #work .group .print\:flex {
+    display: flex !important;
+  }
+
+  /* Formulaire et éléments interactifs masqués */
+  form,
+  button,
+  nav,
+  footer > *:not(:last-child) {
+    display: none !important;
+  }
 }

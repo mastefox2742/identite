@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /graphic-designer-portfolio
+          NEXT_PUBLIC_BASE_PATH: /identite
 
       - name: Add .nojekyll
         run: touch out/.nojekyll

@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sienna: #1d4ed8; /* Blue 700 */
+  --color-electric: #3b82f6; /* Blue 500 */
+  --color-deepblack: #0f172a; /* Slate 900 for dark text */
+  --color-sand: #e0f2fe; /* Light blue gradient end */
+  --color-sand-light: #f8fafc; /* Very light slate gradient start */
+  --color-beige: #ffffff; /* White cards and background */
+  --color-slate-gray: #475569; /* Slate 600 for secondary text */
+}

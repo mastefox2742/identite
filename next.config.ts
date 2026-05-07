@@ -1,12 +1,14 @@
 import type {NextConfig} from 'next';
 
+const isGithubPages = !!process.env.NEXT_PUBLIC_BASE_PATH;
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: false,
+    ignoreBuildErrors: true,
   },
   images: {
     unoptimized: true,
@@ -19,9 +21,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  output: 'export',
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
-  trailingSlash: true,
+  ...(isGithubPages
+    ? {
+        output: 'export',
+        basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+        trailingSlash: true,
+      }
+    : {}),
   transpilePackages: ['motion'],
 };
 

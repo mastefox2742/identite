@@ -44,6 +44,8 @@ const services = [
   }
 ];
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export default function Portfolio() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -494,7 +496,7 @@ export default function Portfolio() {
               <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl shadow-black/60 ring-1 ring-white/10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={projects[selectedProject].image}
+                  src={`${BASE}${projects[selectedProject].image}`}
                   alt={projects[selectedProject].title}
                   className="w-full h-auto object-contain"
                   style={{ maxHeight: '70vh' }}

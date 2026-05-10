@@ -6,24 +6,24 @@ import { Layout, MonitorPlay, ArrowRight, Paintbrush, X, ChevronLeft, ChevronRig
 import { useState, useEffect, useCallback } from 'react';
 
 const projects = [
-  { id: 1, title: 'Jujua Flamme', category: 'Affiche Concert', image: '/IMG-20260322-WA0004.jpg' },
-  { id: 2, title: 'Aurovia Yaourt', category: 'Packaging / Étiquette', image: '/IMG-20260404-WA0050.jpg' },
-  { id: 3, title: 'MH Shop', category: 'Flyer Boutique', image: '/IMG-20260326-WA0006.jpg' },
-  { id: 4, title: 'Chrisna Beauty', category: 'Affiche Prestation', image: '/IMG-20260405-WA0014.jpg' },
+  { id: 1, title: 'Aurovia yoghurt', category: 'Logo', image: '/IMG-20260322-WA0004.jpg' },
+  { id: 2, title: 'MH Shop', category: 'Flyer Boutique', image: '/IMG-20260404-WA0050.jpg' },
+  { id: 3, title: 'Juju la flamme', category: 'concert', image: '/IMG-20260326-WA0006.jpg' },
+  { id: 4, title: 'Picnic Tosangana', category: ' Affiche Événement', image: '/IMG-20260405-WA0014.jpg' },
   { id: 5, title: 'Anniversaire Elvire', category: 'Carte / Invitation', image: '/tata_elvire1.jpg' },
   { id: 6, title: 'Design MH', category: 'Identité Visuelle', image: '/mh_design_1.jpg' },
-  { id: 7, title: 'Picnic Tosangana', category: 'Affiche Événement', image: '/IMG-20260401-WA0039.jpg' },
-  { id: 8, title: 'Grille Tarifaire', category: 'Design Corporate', image: '/IMG-20260331-WA0005.jpg' },
+  { id: 7, title: ' Juju la flamme ', category: ' concert', image: '/IMG-20260401-WA0039.jpg' },
+  { id: 8, title: 'Anniversaire Firtella ', category: 'Carte / Invitation', image: '/IMG-20260331-WA0005.jpg' },
   { id: 9, title: 'Anniversaire Levy', category: 'Affiche Festivité', image: '/INVITATION_LEVY_2.jpg' },
   { id: 10, title: 'Jean 10:27', category: 'Design Religieux', image: '/IMG-20260406-WA0007.jpg' },
-  { id: 11, title: 'Birthday Cornelie', category: 'Affiche', image: '/IMG-20260410-WA0055.jpg' },
-  { id: 12, title: 'Birthday Marie Kate', category: 'Affiche', image: '/IMG-20260411-WA0017.jpg' },
-  { id: 13, title: 'Shooting Promo', category: 'Direction Artistique', image: '/IMG-20260425-WA0019.jpg' },
-  { id: 14, title: 'Campagne Réseaux', category: 'Social Media', image: '/FB_IMG_1774230914153.jpg' },
-  { id: 15, title: 'Illustration Web', category: 'Design Numérique', image: '/388e961ad8ee47fab978ae6452a903aa.jpg' },
-  { id: 16, title: 'Nouvelle Création 1', category: 'Design Graphique', image: '/IMG-20260506-WA0023-1.jpg' },
-  { id: 17, title: 'Nouvelle Création 2', category: 'Design Graphique', image: '/IMG-20260506-WA0024-1.jpg' },
-  { id: 18, title: 'Nouvelle Création 3', category: 'Design Graphique', image: '/IMG-20260430-WA0020.jpg' }
+  { id: 11, title: 'Birthday Marie Kate', category: 'Carte / Invitation', image: '/IMG-20260410-WA0055.jpg' },
+  { id: 12, title: 'Aurovia yoghurt', category: 'logo', image: '/IMG-20260411-WA0017.jpg' },
+  { id: 13, title: 'Birthday Cornelie', category: 'Carte / Invitation', image: '/IMG-20260425-WA0019.jpg' },
+  { id: 14, title: 'Grille tarifaire', category: 'Social Media', image: '/FB_IMG_1774230914153.jpg' },
+  { id: 15, title: 'Coiffure', category: 'Affiche', image: '/388e961ad8ee47fab978ae6452a903aa.jpg' },
+  { id: 16, title: 'Kondi shop', category: 'Logo', image: '/IMG-20260506-WA0023-1.jpg' },
+  { id: 17, title: 'Kondi shop', category: 'Logo', image: '/IMG-20260506-WA0024-1.jpg' },
+  { id: 18, title: 'Exposition', category: 'Affiche', image: '/IMG-20260430-WA0020.jpg' }
 ];
 
 const services = [
